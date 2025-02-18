@@ -21,4 +21,10 @@ public class HotelResController {
     public ResponseEntity<HotelModel> addHotel (@RequestBody HotelModel hotel) {
         return ResponseEntity.ok(hotelService.addHotel(hotel));
     }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<HotelModel> deleteHotel(@PathVariable Long id) {
+        hotelService.deleteHotel(id);
+        return ResponseEntity.noContent().build();
+    }
 }
