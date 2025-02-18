@@ -16,7 +16,14 @@ public class HotelModel {
     private Long id;
     @NotNull
     private String name;
-    private String address;
+    private String streetNumber;
+    private String streetName;
+    @NotNull
+    private String city;
+    private String province;
+    @NotNull
+    private String country;
+    private String postalCode;
     @NotNull
     private double pricePerNight;
 }
