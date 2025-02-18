@@ -21,7 +21,6 @@ public class HotelModel {
     @NotNull
     private String city;
     private String province;
-    @NotNull
     private String country;
     private String postalCode;
     @NotNull
