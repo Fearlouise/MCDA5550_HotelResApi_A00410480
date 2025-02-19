@@ -25,7 +25,7 @@ SQLite, and postman for testing.
 ### Checking API Works
 There are two ways to verify that the API is working:
 
-1. Open in Browser
+1. Open in Browser:
     - Go to http://localhost:8080 in a browser:
     ![BrowserVerification.png](screenshots/BrowserVerification.png)  
 
@@ -34,7 +34,7 @@ There are two ways to verify that the API is working:
    - GET http://localhost:8080/api/hotels
    ![VerifyApiWithGet.png](screenshots/VerifyApiWithGet.png)
 
-### "POST" Request
+### **POST** Request
 To add a new hotel, send a POST request in Postman:
 
 1. Method: POST
@@ -59,10 +59,10 @@ Examples of a successful POST request:
 ![SuccessfulPost5.png](screenshots/SuccessfulPost5.png)
 
 
-Example of a failed POST request (missing required fields)
+Example of a failed POST request (missing required fields):
 ![UnsuccessfulPost.png](screenshots/UnsuccessfulPost.png)
 
-### Verify "POST" Request Works
+### Verify **POST** Request Works
 After adding hotels, you can retrieve them using:
 
 1. Postman GET Request:
@@ -72,7 +72,7 @@ After adding hotels, you can retrieve them using:
 2. Open in Browser: http://localhost:8080
 ![CheckPostWithBrowser.png](screenshots/CheckPostWithBrowser.png)
 
-### "DELETE" Request
+### **DELETE** Request
 To delete a hotel, send a DELETE request
 
 1. Method: DELETE
@@ -82,10 +82,10 @@ Example of a successful DELETE Request:
 ![SuccessfulDelete.png](screenshots/SuccessfulDelete.png)
 
 
-Example of a failed DELETE Request (non-existent hotel)
+Example of a failed DELETE Request (non-existent hotel):
 ![UnsuccessfulDelete.png](screenshots/UnsuccessfulDelete.png)
 
-### Verify "DELETE" Request Works
+### Verify **DELETE** Request Works
 After deleting hotels, you can verify deletion using:
 
 1. Postman GET Request:
