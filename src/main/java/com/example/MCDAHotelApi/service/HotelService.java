@@ -18,8 +18,13 @@ public class HotelService {
     public HotelModel addHotel (HotelModel hotel) {
         return hotelRepository.save(hotel);
     }
-    public void deleteHotel(Long id) {
-        hotelRepository.deleteById(id);
+    public boolean deleteHotel (Long id) {
+        if (hotelRepository.existsById(id)) {
+            hotelRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }
