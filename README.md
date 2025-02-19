@@ -6,19 +6,23 @@ demonstrating how to build a REST API using Springboot,
 SQLite, and postman for testing.
 
 ## How to Run API
-1. Clone the respository 
+1. Ensure you have Java and Maven installed:
+   - java -version
+   - mvn -version
+   - if not installed:
+     - Install Java from Oracle or OpenJDK
+     - Install Maven from Apache Maven
+2. Clone the respository by running:
     - git clone <https://github.com/Fearlouise/MCDA5550_HotelRes.git>
     - cd MCDA5550_HotelRes
-2. Ensure you have Java and Maven installed:
-    - java -version
-    - mvn -version
-3. Navigate to the project folder and install dependencies by running: 
+3. Install dependencies by running: 
    - mvn clean install
 4. Run the Springboot application: 
    - mvn spring-boot run
    - This will start the application on http://localhost:8080
 
-## Checking API Works
+## API Commands
+### Checking API Works
 There are two ways to verify that the API is working:
 
 1. Open in Browser
@@ -30,7 +34,7 @@ There are two ways to verify that the API is working:
    - GET http://localhost:8080/api/hotels
    ![VerifyApiWithGet.png](screenshots/VerifyApiWithGet.png)
 
-## "POST" Request
+### "POST" Request
 To add a new hotel, send a POST request in Postman:
 
 1. Method: POST
@@ -58,7 +62,7 @@ Examples of a successful POST request:
 Example of a failed POST request (missing required fields)
 ![UnsuccessfulPost.png](screenshots/UnsuccessfulPost.png)
 
-## Verify "POST" Request Works
+### Verify "POST" Request Works
 After adding hotels, you can retrieve them using:
 
 1. Postman GET Request:
@@ -68,7 +72,7 @@ After adding hotels, you can retrieve them using:
 2. Open in Browser: http://localhost:8080
 ![CheckPostWithBrowser.png](screenshots/CheckPostWithBrowser.png)
 
-## "DELETE" Request
+### "DELETE" Request
 To delete a hotel, send a DELETE request
 
 1. Method: DELETE
@@ -81,7 +85,7 @@ Example of a successful DELETE Request:
 Example of a failed DELETE Request (non-existent hotel)
 ![UnsuccessfulDelete.png](screenshots/UnsuccessfulDelete.png)
 
-## Verify "DELETE" Request Works
+### Verify "DELETE" Request Works
 After deleting hotels, you can verify deletion using:
 
 1. Postman GET Request:
@@ -91,3 +95,18 @@ After deleting hotels, you can verify deletion using:
 2. Open in Browser: http://localhost:8080
    ![CheckDeleteWithBrowser.png](screenshots/CheckDeleteWithBrowser.png)
     
+## Conclusion
+This API provides a simple way to manage hotel listing using **Springboot** and **SQLite** .
+It supports basic operations like:
+- **GET**: Retrieve a list of available hotels.
+- **POST**: Add new hotels to the database.
+- **DELETE**: Remove hotels by their ID.
+
+### Future Improvements
+Potential enhancements for this API include:
+- **Adding a Customer and Reservation System**: To track bookings and allow customers to reserve hotels.
+- **Managing Hotel Availability**: Implementing logic to check and update available rooms in a hotel.
+- **Access Control and Permissions**: Restricting actions like deleting hotels to authorized users only.
+
+These features would improve the API's functionality, making it a **fully functional hotel reservation system**.
+
