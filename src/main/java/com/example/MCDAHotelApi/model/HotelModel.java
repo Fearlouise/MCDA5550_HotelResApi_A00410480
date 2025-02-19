@@ -15,7 +15,7 @@ public class HotelModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotNull
-    private String name;
+    private String HotelName;
     private String streetNumber;
     private String streetName;
     @NotNull
