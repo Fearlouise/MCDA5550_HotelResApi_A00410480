@@ -1,26 +1,93 @@
 # MCDA5550_HotelRes
-Sanjeevi's assignment for MCDA 5550 - Creating an API for a hotel reservation system using Springboot
+A Springboot API for managing hotel reservations.
 
-## How to run API
+This project was developed as part of MCDA5550, 
+demonstrating how to build a REST API using Springboot, 
+SQLite, and postman for testing.
+
+## How to Run API
+1. Clone the respository 
+    - git clone <https://github.com/Fearlouise/MCDA5550_HotelRes.git>
+    - cd MCDA5550_HotelRes
+2. Ensure you have Java and Maven installed:
+    - java -version
+    - mvn -version
+3. Navigate to the project folder and install dependencies by running: 
+   - mvn clean install
+4. Run the Springboot application: 
+   - mvn spring-boot run
+   - This will start the application on http://localhost:8080
+
+## Checking API Works
+There are two ways to verify that the API is working:
+
+1. Open in Browser
+    - Go to http://localhost:8080 in a browser:
+    ![BrowserVerification.png](screenshots/BrowserVerification.png)  
 
 
-## Checking API works
-![Screenshot 2025-02-19 at 10.00.47 AM .png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_vDGZKS/Screenshot%202025-02-19%20at%2010.00.47%E2%80%AFAM.png)
-![Screenshot 2025-02-19 at 10.01.39 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_8CFeJo/Screenshot%202025-02-19%20at%2010.01.39%E2%80%AFAM.png)
+2. Use Postman (GET Request):
+   - GET http://localhost:8080/api/hotels
+   ![VerifyApiWithGet.png](screenshots/VerifyApiWithGet.png)
 
 ## "POST" Request
-![Screenshot 2025-02-19 at 10.03.05 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_2uVfr0/Screenshot%202025-02-19%20at%2010.03.05%E2%80%AFAM.png)
-![Screenshot 2025-02-19 at 10.04.06 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_QU4Pwk/Screenshot%202025-02-19%20at%2010.04.06%E2%80%AFAM.png)
-![Screenshot 2025-02-19 at 10.04.38 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_hDEGQd/Screenshot%202025-02-19%20at%2010.04.38%E2%80%AFAM.png)
-![Screenshot 2025-02-19 at 10.05.04 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_MQ00wN/Screenshot%202025-02-19%20at%2010.05.04%E2%80%AFAM.png)
-![Screenshot 2025-02-19 at 10.05.28 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_XaCkPT/Screenshot%202025-02-19%20at%2010.05.28%E2%80%AFAM.png)
-![Screenshot 2025-02-19 at 10.16.25 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_9VyNs5/Screenshot%202025-02-19%20at%2010.16.25%E2%80%AFAM.png)
+To add a new hotel, send a POST request in Postman:
 
-## "GET" Request
-![Screenshot 2025-02-19 at 10.17.08 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_f4oKqe/Screenshot%202025-02-19%20at%2010.17.08%E2%80%AFAM.png)
-![Screenshot 2025-02-19 at 10.20.29 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_ShHfmP/Screenshot%202025-02-19%20at%2010.20.29%E2%80%AFAM.png)
+1. Method: POST
+2. Endpoint: http://localhost:8080/api/hotels
+3. Body example (JSON):
+   {
+   "hotelName": "Hilton Garden Inn",
+   "streetNumber": "123",
+   "streetName": "Main St",
+   "city": "New York",
+   "province": "NY",
+   "country": "USA",
+   "postalCode": "10001",
+   "pricePerNight": 150.0
+   }
+
+Examples of a successful POST request:
+![SuccessfulPost1.png](screenshots/SuccessfulPost1.png)
+![SuccessfulPost2.png](screenshots/SuccessfulPost2.png)
+![SuccessfulPost3.png](screenshots/SuccessfulPost3.png)
+![SuccessfulPost4.png](screenshots/SuccessfulPost4.png)
+![SuccessfulPost5.png](screenshots/SuccessfulPost5.png)
+
+
+Example of a failed POST request (missing required fields)
+![UnsuccessfulPost.png](screenshots/UnsuccessfulPost.png)
+
+## Verify "POST" Request Works
+After adding hotels, you can retrieve them using:
+
+1. Postman GET Request:
+![CheckPostWithGet.png](screenshots/CheckPostWithGet.png)
+
+
+2. Open in Browser: http://localhost:8080
+![CheckPostWithBrowser.png](screenshots/CheckPostWithBrowser.png)
 
 ## "DELETE" Request
-![Screenshot 2025-02-19 at 10.17.57 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_D3UrFr/Screenshot%202025-02-19%20at%2010.17.57%E2%80%AFAM.png)
-![Screenshot 2025-02-19 at 10.18.22 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_rsyKuL/Screenshot%202025-02-19%20at%2010.18.22%E2%80%AFAM.png)
-![Screenshot 2025-02-19 at 10.18.53 AM.png](../../../../var/folders/z4/tl201fy9215_hlv5g9h1v2sm0000gp/T/TemporaryItems/NSIRD_screencaptureui_Xz9VfW/Screenshot%202025-02-19%20at%2010.18.53%E2%80%AFAM.png)
+To delete a hotel, send a DELETE request
+
+1. Method: DELETE
+2. Endpoint: http://localhost:8080/api/hotels/{id}
+
+Example of a successful DELETE Request:
+![SuccessfulDelete.png](screenshots/SuccessfulDelete.png)
+
+
+Example of a failed DELETE Request (non-existent hotel)
+![UnsuccessfulDelete.png](screenshots/UnsuccessfulDelete.png)
+
+## Verify "DELETE" Request Works
+After deleting hotels, you can verify deletion using:
+
+1. Postman GET Request:
+   ![CheckDeleteWithGet.png](screenshots/CheckDeleteWithGet.png)
+
+
+2. Open in Browser: http://localhost:8080
+   ![CheckDeleteWithBrowser.png](screenshots/CheckDeleteWithBrowser.png)
+    
