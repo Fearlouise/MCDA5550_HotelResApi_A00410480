@@ -1,4 +1,4 @@
-# MCDA5550_HotelRes
+mvn# MCDA5550_HotelRes
 A Springboot API for managing hotel reservations.
 
 This project was developed as part of MCDA5550, 

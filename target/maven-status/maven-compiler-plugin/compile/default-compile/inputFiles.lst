@@ -1,0 +1,17 @@
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/McdaHotelApiApplication.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/controller/CustomerController.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/controller/GuestController.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/controller/HotelController.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/controller/ReservationController.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/model/CustomerModel.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/model/GuestModel.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/model/HotelModel.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/model/ReservationModel.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/repository/CustomerRepository.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/repository/GuestRepository.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/repository/HotelRepository.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/repository/ReservationRepository.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/service/CustomerService.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/service/GuestService.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/service/HotelService.java
+/Users/louise/Desktop/Springboot Assignment/src/main/java/com/example/MCDAHotelApi/service/ReservationService.java
