@@ -1,10 +1,11 @@
 package com.example.MCDAHotelApi.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
-import com.fasterxml.jackson.annotation.JsonManagedReference;  // Add this import
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties({"reservations"})
 public class HotelModel {
 
     @Id
@@ -34,17 +36,7 @@ public class HotelModel {
 
     @Column(name = "postal_code", length = 20, nullable = false)
     private String postalCode;
-
-    @JsonManagedReference
-    @OneToMany(mappedBy = "hotel")
-    private List<ReservationModel> reservations;
-
-    @JsonIgnore  // Add this annotation
-    public List<ReservationModel> getReservations() {
-        return reservations;
-    }
 }
-
 
 
 

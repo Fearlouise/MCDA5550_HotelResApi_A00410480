@@ -1,6 +1,6 @@
 package com.example.MCDAHotelApi.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.*;
 import jakarta.persistence.*;
 import lombok.*;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -9,12 +9,14 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Entity
 @Table(name = "reservations")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class ReservationModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -38,14 +40,15 @@ public class ReservationModel {
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
+    @JsonIdentityReference(alwaysAsId = true)  // Serialize only customer ID, not the full object
     private CustomerModel customer;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "reservation", cascade = CascadeType.ALL)
     private List<GuestModel> guests;
 
     @PrePersist
     public void generateReservationNumber() {
-        // Generate a random reservation number using UUID or any other preferred method
         this.reservationNumber = "RES-" + UUID.randomUUID().toString();
     }
 }
