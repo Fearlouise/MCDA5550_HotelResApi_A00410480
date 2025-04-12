@@ -1,6 +1,7 @@
 com/example/MCDAHotelApi/service/ReservationService.class
 com/example/MCDAHotelApi/controller/HotelController.class
 com/example/MCDAHotelApi/model/CustomerModel.class
+com/example/MCDAHotelApi/wrapper/GuestListWrapper.class
 com/example/MCDAHotelApi/controller/GuestController.class
 com/example/MCDAHotelApi/controller/CustomerController.class
 com/example/MCDAHotelApi/controller/ReservationController.class
