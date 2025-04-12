@@ -20,7 +20,7 @@ public class GuestModel {
     private Long id;
 
     @NotNull
-    private String Name;
+    private String name;
 
     @NotNull
     private String gender;

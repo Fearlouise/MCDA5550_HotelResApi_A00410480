@@ -2,6 +2,7 @@ package com.example.MCDAHotelApi.controller;
 
 import com.example.MCDAHotelApi.model.GuestModel;
 import com.example.MCDAHotelApi.service.GuestService;
+import com.example.MCDAHotelApi.wrapper.GuestListWrapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -29,8 +30,15 @@ public class GuestController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    // ✅ Updated POST endpoint to accept wrapped guest list
     @PostMapping
-    public ResponseEntity<List<GuestModel>> createGuests(@RequestBody List<GuestModel> guestModels) {
+    public ResponseEntity<List<GuestModel>> createGuests(@RequestBody GuestListWrapper wrapper) {
+        List<GuestModel> guestModels = wrapper.getGuests();
+
+        if (guestModels == null || guestModels.isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
         List<GuestModel> createdGuests = guestService.createGuests(guestModels);
         return ResponseEntity.status(201).body(createdGuests);
     }
@@ -38,6 +46,8 @@ public class GuestController {
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteGuest(@PathVariable Long id) {
         boolean isDeleted = guestService.deleteGuest(id);
-        return isDeleted ? ResponseEntity.ok("Guest deleted successfully") : ResponseEntity.notFound().build();
+        return isDeleted
+                ? ResponseEntity.ok("Guest deleted successfully")
+                : ResponseEntity.notFound().build();
     }
 }
