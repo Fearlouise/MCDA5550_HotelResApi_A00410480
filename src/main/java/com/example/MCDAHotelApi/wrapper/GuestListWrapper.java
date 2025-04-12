@@ -1,8 +1,11 @@
 package com.example.MCDAHotelApi.wrapper;
 
 import com.example.MCDAHotelApi.model.GuestModel;
+import lombok.Data;
+
 import java.util.List;
 
+@Data
 public class GuestListWrapper {
     private List<GuestModel> guests;
 
@@ -10,14 +13,6 @@ public class GuestListWrapper {
     }
 
     public GuestListWrapper(List<GuestModel> guests) {
-        this.guests = guests;
-    }
-
-    public List<GuestModel> getGuests() {
-        return guests;
-    }
-
-    public void setGuests(List<GuestModel> guests) {
         this.guests = guests;
     }
 }

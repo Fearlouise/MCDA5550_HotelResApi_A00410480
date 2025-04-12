@@ -30,16 +30,24 @@ public class GuestController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    // ✅ Updated POST endpoint to accept wrapped guest list
     @PostMapping
     public ResponseEntity<List<GuestModel>> createGuests(@RequestBody GuestListWrapper wrapper) {
-        List<GuestModel> guestModels = wrapper.getGuests();
+        System.out.println("📥 Received GuestListWrapper: " + wrapper);
 
-        if (guestModels == null || guestModels.isEmpty()) {
+        if (wrapper == null) {
+            System.out.println("❌ Wrapper is null");
             return ResponseEntity.badRequest().build();
         }
 
-        List<GuestModel> createdGuests = guestService.createGuests(guestModels);
+        List<GuestModel> guests = wrapper.getGuests();
+        System.out.println("📥 Extracted guests: " + guests);
+
+        if (guests == null || guests.isEmpty()) {
+            System.out.println("⚠️ Guest list is null or empty");
+            return ResponseEntity.badRequest().build();
+        }
+
+        List<GuestModel> createdGuests = guestService.createGuests(guests);
         return ResponseEntity.status(201).body(createdGuests);
     }
 
