@@ -9,7 +9,6 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
-@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 @Entity
 @Table(name = "reservations")
 @Data
@@ -40,7 +39,7 @@ public class ReservationModel {
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
-    @JsonIdentityReference(alwaysAsId = true)  // Serialize only customer ID, not the full object
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
     private CustomerModel customer;
 
     @JsonIgnore
